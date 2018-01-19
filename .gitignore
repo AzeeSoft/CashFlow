@@ -1,0 +1,8 @@
+Output/
+Library/
+UnityPackageManager/
+Temp/
+build/
+.vs/
+*.csproj
+*.sln
