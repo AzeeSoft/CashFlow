@@ -7,9 +7,13 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 5f;
 
+
+    Rigidbody2D rb2d;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+	    rb2d = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +25,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movementVector = new Vector3(hor, ver);
 	    movementVector *= speed;
 
-	    transform.position += movementVector;
+	    rb2d.velocity = movementVector;
 	}
 }
