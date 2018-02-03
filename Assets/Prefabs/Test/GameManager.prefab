@@ -57,3 +57,4 @@ MonoBehaviour:
   loseScreen: {fileID: 0}
   initTimer: 60
   cashTarget: 200
+  autoIncrementCash: 0
