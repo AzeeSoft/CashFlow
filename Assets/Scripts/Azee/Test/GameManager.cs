@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     State curState = State.Playing;
 
     float timeLeft = 0;
-    int curCash = 0;
+    public int curCash = 0;
 
     void Awake()
     {
