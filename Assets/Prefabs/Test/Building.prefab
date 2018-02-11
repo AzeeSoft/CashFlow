@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4153136394330260}
   - component: {fileID: 212392338371563594}
   m_Layer: 8
-  m_Name: DeprecatedMiniMapIndicator
+  m_Name: MiniMapIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
