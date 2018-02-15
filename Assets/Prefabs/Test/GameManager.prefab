@@ -58,3 +58,4 @@ MonoBehaviour:
   initTimer: 60
   cashTarget: 200
   autoIncrementCash: 0
+  curCash: 0
