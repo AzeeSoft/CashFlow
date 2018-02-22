@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    void addCash(int cash)
+    public void addCash(int cash)
     {
         curCash += cash;
     }

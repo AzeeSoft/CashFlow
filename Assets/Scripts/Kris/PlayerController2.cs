@@ -8,7 +8,6 @@ public class PlayerController2 : MonoBehaviour
 {
 
     public float speed = 5f;
-    public Randomizer Respawn; 
 
 
 
@@ -30,17 +29,6 @@ public class PlayerController2 : MonoBehaviour
         movementVector *= speed;
 
         rb2d.velocity = movementVector;
-    }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Collectable"))
-        {
-            Destroy(other.gameObject);
-            Respawn.SpawnCollectables();
-            Debug.Log("Test");
-        }
-
     }
 
 

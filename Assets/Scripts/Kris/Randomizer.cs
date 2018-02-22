@@ -5,7 +5,9 @@ using UnityEngine;
 public class Randomizer : MonoBehaviour
 {
     //create an array of spawn points, assigned in inspector 
-    public Transform[] collectableSpawnPoints = new Transform[5];
+    public List<Transform> collectableSpawnPoints = new List<Transform>();
+
+    Transform currentSpawnPoint;
 
     //create an array of collectables to choose from
     public GameObject[] items = new GameObject[3];
@@ -19,15 +21,19 @@ public class Randomizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     //selects spawn point
     public Transform GetCollectableSpawnPoint()
     {
         //randomly selects a point out of the array
-        int index = Random.Range(0, collectableSpawnPoints.Length);
+        int index = Random.Range(0, collectableSpawnPoints.Count);
+
+        currentSpawnPoint = collectableSpawnPoints[index];
         //returns the selected point
-        return collectableSpawnPoints[index];
+        return currentSpawnPoint;
+  
     }
 
     //selects object to spawn
@@ -42,8 +48,10 @@ public class Randomizer : MonoBehaviour
     // spawns the random object on the random point
     public GameObject SpawnCollectables()
     {
-        //selects the spawn point
+        //selects the spawn point and removes it from the table of choices
         Transform spawnPoint = GetCollectableSpawnPoint();
+        collectableSpawnPoints.Remove(spawnPoint);
+
         //selects the object
         GameObject collectable = GetCollectable();
         //creates the object selected on the point selected
@@ -51,4 +59,7 @@ public class Randomizer : MonoBehaviour
         //spawns the object
         return c;
     }
+
+
+    
 }
