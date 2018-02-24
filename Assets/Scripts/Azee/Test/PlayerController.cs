@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     public float rotationSpeed = 5f;
 
+    public Transform coinArrowTransform;
 
     Rigidbody2D rb2d;
 
@@ -35,6 +37,38 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime*rotationSpeed);
         }
+
+        updateCoinArrow();
+    }
+
+    public void updateCoinArrow()
+    {
+        coinArrowTransform.position = transform.position;
+
+        bool hideArrow = true;
+
+        Collectable collectable = FindObjectOfType<Collectable>();
+        if (collectable)
+        {
+            GameObject coinGameObject = collectable.gameObject;
+            Transform coinTransform = coinGameObject.transform;
+
+            if (!coinGameObject.GetComponent<Renderer>().isVisible)
+            {
+                Vector2 dir = coinTransform.position - transform.position;
+
+                Quaternion targetRotation = Quaternion.Euler(coinArrowTransform.rotation.x,
+                    coinArrowTransform.rotation.y,
+                    Vector2.SignedAngle(Vector2.up, dir));
+
+                coinArrowTransform.rotation = Quaternion.Lerp(coinArrowTransform.rotation, targetRotation,
+                    Time.deltaTime*rotationSpeed);
+
+                hideArrow = false;
+            }
+        }
+
+        coinArrowTransform.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = !hideArrow;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

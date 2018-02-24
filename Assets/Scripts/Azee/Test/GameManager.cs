@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Sprite[] cashJarSprites;
 
     State curState = State.Playing;
+    PlayerController playerController;
 
     float timeLeft = 0;
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         timeLeft = initTimer;
         curState = State.Playing;
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Use this for initialization
