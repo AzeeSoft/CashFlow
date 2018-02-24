@@ -53,9 +53,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 0}
   cashText: {fileID: 0}
+  cashJarImage: {fileID: 0}
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
   initTimer: 360
   cashTarget: 1500
   autoIncrementCash: 0
+  cashJarSprites:
+  - {fileID: 21300000, guid: 62f38a0673abc14418ebbfed397140fe, type: 3}
+  - {fileID: 21300000, guid: f31875aa7af333d469c8776b08e19c81, type: 3}
+  - {fileID: 21300000, guid: e9df042c84ae74f419fc8329460d2d99, type: 3}
+  - {fileID: 21300000, guid: ac5546604babad647a3c5d122a762557, type: 3}
+  - {fileID: 21300000, guid: a69a9220595ca1f4d98b83584744685d, type: 3}
+  - {fileID: 21300000, guid: 3ff984076045e154f80ac77bd5858d27, type: 3}
+  - {fileID: 21300000, guid: 7fc5532f8eb251046ae567afc6c54e84, type: 3}
+  - {fileID: 21300000, guid: dfd764b7c4a23b346882e3f163624e5d, type: 3}
   curCash: 0

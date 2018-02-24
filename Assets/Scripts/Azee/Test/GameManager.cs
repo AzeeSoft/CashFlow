@@ -14,16 +14,21 @@ public class GameManager : MonoBehaviour
 
     public Text timerText;
     public Text cashText;
+    public Image cashJarImage;
     public GameObject winScreen;
     public GameObject loseScreen;
 
     public float initTimer = 60;
-    public float cashTarget = 200;
+    public int cashTarget = 200;
     public bool autoIncrementCash = false;
+
+    public Sprite[] cashJarSprites;
 
     State curState = State.Playing;
 
     float timeLeft = 0;
+
+    [HideInInspector]
     public int curCash = 0;
 
     void Awake()
@@ -77,6 +82,8 @@ public class GameManager : MonoBehaviour
     public void addCash(int cash)
     {
         curCash += cash;
+        if (curCash > cashTarget)
+            curCash = cashTarget;
     }
 
 
@@ -88,6 +95,19 @@ public class GameManager : MonoBehaviour
     void refreshCashDisplay()
     {
         cashText.text = "Cash: $" + curCash + " / $" + cashTarget;
+        refreshCashJar();
+    }
+
+    void refreshCashJar()
+    {
+        int cashJarSpriteIndex = (int)StaticTools.Remap(curCash, 0, cashTarget, 0, cashJarSprites.Length - 1);
+
+        if (cashJarSpriteIndex == 0 && curCash > 0 && cashJarSprites.Length>1)
+        {
+            cashJarSpriteIndex = 1;
+        }
+
+        cashJarImage.sprite = cashJarSprites[cashJarSpriteIndex];
     }
 
 
