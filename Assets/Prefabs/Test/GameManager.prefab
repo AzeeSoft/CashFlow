@@ -56,6 +56,6 @@ MonoBehaviour:
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
   initTimer: 60
-  cashTarget: 200
+  cashTarget: 1500
   autoIncrementCash: 0
   curCash: 0
