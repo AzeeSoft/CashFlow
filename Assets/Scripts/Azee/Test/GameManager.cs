@@ -82,12 +82,12 @@ public class GameManager : MonoBehaviour
 
     void refreshTimerText()
     {
-        timerText.text = "Timer: " + (int) (timeLeft);
+        timerText.text = "Time Left: " + (int) (timeLeft) + "s";
     }
 
     void refreshCashDisplay()
     {
-        cashText.text = "Cash: $" + curCash;
+        cashText.text = "Cash: $" + curCash + " / $" + cashTarget;
     }
 
 
