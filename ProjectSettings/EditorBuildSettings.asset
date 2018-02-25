@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Kris/Main Menu.unity
-    guid: ff91573bc1c576242b34503222c6363a
+    path: Assets/Scenes/Azee/Test/test.unity
+    guid: a77d1b0ca111ce6429f0903f7d69898e
   - enabled: 1
-    path: Assets/Scenes/Kris/testK.unity
-    guid: 4a07eedd13ba47d408fb7f053a6cdf9d
+    path: Assets/Scenes/Azee/Main Menu.unity
+    guid: 667eb692aa48c7f49a0f90e5d8ce465d

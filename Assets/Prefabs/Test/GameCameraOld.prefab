@@ -66,7 +66,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -103,7 +103,7 @@ MonoBehaviour:
   FadeShader: {fileID: 4800000, guid: 66da11341a5fe08489b0b483a3b09735, type: 3}
   FadeColor: {r: 0, g: 0, b: 0, a: 1}
   FadeSeparation: 0.647
-  FadeFactor: 0
+  FadeFactor: 0.194
 --- !u!114 &114652448716986796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,11 +134,11 @@ MonoBehaviour:
   StretchToDisplay: 1
   AspectRatio: 1.33
   EnableTVCurvature: 1
-  Curvature: 0.57
+  Curvature: 0.63
   TVOverlay: {fileID: 2800000, guid: 983b4e2248d599443981d96b39576aeb, type: 3}
   EnablePixelMask: 1
   PixelMaskTexture: {fileID: 2800000, guid: 55b9f85457b9afc46834d927aa2e61cc, type: 3}
-  MaskRepeatX: 125
+  MaskRepeatX: 260
   MaskRepeatY: 90
   PixelMaskBrightness: 1.125
   IQOffset: {x: 0, y: 0}

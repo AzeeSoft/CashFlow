@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Image cashJarImage;
     public GameObject winScreen;
     public GameObject loseScreen;
+    public GameObject guideScreen;
 
     public float initTimer = 60;
     public int cashTarget = 200;
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        guideScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -120,6 +124,12 @@ public class GameManager : MonoBehaviour
         cashJarImage.sprite = cashJarSprites[cashJarSpriteIndex];
     }
 
+    public void closeGuide()
+    {
+        guideScreen.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void onCashStolen()
     {
         StartCoroutine(animateOnCashStolen());
@@ -187,13 +197,21 @@ public class GameManager : MonoBehaviour
 
     void win()
     {
+        Time.timeScale = 0;
         curState = State.Won;
         winScreen.SetActive(true);
     }
 
     void lose()
     {
+        Time.timeScale = 0;
         curState = State.Lost;
         loseScreen.SetActive(true);
+    }
+
+    public void goToMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main Menu");
     }
 }
