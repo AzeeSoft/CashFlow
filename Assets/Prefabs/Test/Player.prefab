@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1678420997912108}
   m_IsPrefabParent: 1
+--- !u!1 &1438466218163004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4089456005042350}
+  - component: {fileID: 108470417702211844}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1678420997912108
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +62,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4089456005042350
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438466218163004}
+  m_LocalRotation: {x: -0.46244514, y: 0, z: 0, w: 0.88664794}
+  m_LocalPosition: {x: 0.13, y: -1.59, z: -0.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4301709978293892}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -55.09, y: 0, z: 0}
 --- !u!4 &4301709978293892
 Transform:
   m_ObjectHideFlags: 1
@@ -57,6 +86,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4528990567577860}
+  - {fileID: 4089456005042350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,6 +148,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2294831, y: 1.1573421}
   m_EdgeRadius: 0
+--- !u!108 &108470417702211844
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1438466218163004}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 0.42820075, g: 0.9705882, b: 0.8134829, a: 1}
+  m_Intensity: 2.6
+  m_Range: 12.57
+  m_SpotAngle: 53.4
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114625813176235824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   rotationSpeed: 15
-  CoinArrowTransform: {fileID: 0}
+  coinArrowTransform: {fileID: 0}
 --- !u!212 &212281483001924928
 SpriteRenderer:
   m_ObjectHideFlags: 1

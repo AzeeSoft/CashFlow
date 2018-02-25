@@ -56,7 +56,7 @@ MonoBehaviour:
   cashJarImage: {fileID: 0}
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
-  initTimer: 360
+  initTimer: 180
   cashTarget: 1500
   autoIncrementCash: 0
   cashJarSprites:
