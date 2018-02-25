@@ -56,9 +56,13 @@ MonoBehaviour:
   cashJarImage: {fileID: 0}
   winScreen: {fileID: 0}
   loseScreen: {fileID: 0}
+  guideScreen: {fileID: 0}
   initTimer: 180
   cashTarget: 1500
   autoIncrementCash: 0
+  initialContrast: 1.2
+  initialHueShift: 0
+  cameraSize: 8
   cashJarSprites:
   - {fileID: 21300000, guid: 62f38a0673abc14418ebbfed397140fe, type: 3}
   - {fileID: 21300000, guid: f31875aa7af333d469c8776b08e19c81, type: 3}

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using EZCameraShake;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityEngine.SceneManagement;
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
     public bool autoIncrementCash = false;
     public float initialContrast = 1.2f;
     public float initialHueShift = 0f;
+
+    public float cameraSize;
 
     public Sprite[] cashJarSprites;
 
@@ -93,6 +97,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void beginPlay()
+    {
+        StartCoroutine(zoomInCamera());
+    }
+
+    IEnumerator zoomInCamera()
+    {
+        while (Math.Abs(Camera.main.orthographicSize - cameraSize) > 0)
+        {
+            float deltaSize = 1.5f;
+
+            if (Math.Abs(Camera.main.orthographicSize - cameraSize) < deltaSize)
+            {
+                Camera.main.orthographicSize = cameraSize;
+            } else if (Camera.main.orthographicSize < cameraSize)
+            {
+                Camera.main.orthographicSize += deltaSize;
+            } else if (Camera.main.orthographicSize > cameraSize)
+            {
+                Camera.main.orthographicSize -= deltaSize;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 
     public void addCash(int cash)
     {
@@ -128,11 +157,13 @@ public class GameManager : MonoBehaviour
     {
         guideScreen.SetActive(false);
         Time.timeScale = 1;
+        beginPlay();
     }
 
     public void onCashStolen()
     {
         StartCoroutine(animateOnCashStolen());
+        CameraShaker.Instance.ShakeOnce(2f, 2f, 0.1f, 0.1f);
     }
 
     IEnumerator animateOnCashStolen()
