@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
         float ver = Input.GetAxis("Vertical");
 
         Vector3 movementVector = new Vector3(hor, ver);
+
+        if (movementVector.magnitude > 1)
+        {
+            movementVector.Normalize();
+        }
+
         movementVector *= speed;
 
         rb2d.velocity = movementVector;
