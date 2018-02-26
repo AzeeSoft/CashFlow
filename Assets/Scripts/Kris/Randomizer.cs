@@ -50,7 +50,7 @@ public class Randomizer : MonoBehaviour
     {
         //selects the spawn point and removes it from the table of choices
         Transform spawnPoint = GetCollectableSpawnPoint();
-        collectableSpawnPoints.Remove(spawnPoint);
+        
 
         //selects the object
         GameObject collectable = GetCollectable();
