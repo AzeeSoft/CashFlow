@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditsScreen: {fileID: 1065952292}
-  gameSceneName: test
+  gameSceneName: GameLevel
 --- !u!82 &1650167063
 AudioSource:
   m_ObjectHideFlags: 0

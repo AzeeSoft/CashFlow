@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject winScreen;
     public GameObject loseScreen;
     public GameObject guideScreen;
+    public GameObject pauseScreen;
 
     public float initTimer = 60;
     public int cashTarget = 200;
@@ -85,6 +86,18 @@ public class GameManager : MonoBehaviour
                 } else if (timeLeft <= 0)
                 {
                     onTimeOut();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    if (pauseScreen.activeSelf)
+                    {
+                        resumeGame();
+                    }
+                    else
+                    {
+                        pauseGame();
+                    }
                 }
 
                 break;
@@ -245,5 +258,17 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void pauseGame()
+    {
+        pauseScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void resumeGame()
+    {
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1;
     }
 }

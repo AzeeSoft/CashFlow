@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Azee/Test/test.unity
-    guid: a77d1b0ca111ce6429f0903f7d69898e
-  - enabled: 1
     path: Assets/Scenes/Azee/Main Menu.unity
     guid: 667eb692aa48c7f49a0f90e5d8ce465d
+  - enabled: 1
+    path: Assets/Scenes/Azee/GameLevel.unity
+    guid: ce7d59900efd3aa419a87e223ae20cd4

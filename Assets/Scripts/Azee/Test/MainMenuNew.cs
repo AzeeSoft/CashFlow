@@ -10,6 +10,17 @@ public class MainMenuNew : MonoBehaviour
 
     public String gameSceneName = "test";
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (creditsScreen.activeSelf)
+            {
+                hideCreditsScreen();
+            }
+        }
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene(gameSceneName);
