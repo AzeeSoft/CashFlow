@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator zoomInCamera()
     {
+        yield return new WaitForSeconds(1f);
         while (Math.Abs(Camera.main.orthographicSize - cameraSize) > 0)
         {
             float deltaSize = 1.5f;
