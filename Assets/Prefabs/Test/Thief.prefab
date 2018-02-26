@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114527959891772458}
   - component: {fileID: 61839275880499512}
   - component: {fileID: 50024962323563296}
+  - component: {fileID: 61633359009433258}
   m_Layer: 0
   m_Name: Thief
   m_TagString: Untagged
@@ -93,6 +94,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61633359009433258
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1078162437223904}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07149589, y: 0.12511683}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 1.59}
+    newSize: {x: 4, y: 1.59}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.248357, y: 1.1967723}
+  m_EdgeRadius: 0
 --- !u!61 &61839275880499512
 BoxCollider2D:
   m_ObjectHideFlags: 1
